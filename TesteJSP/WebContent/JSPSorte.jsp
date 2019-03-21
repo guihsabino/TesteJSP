@@ -5,27 +5,32 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Teste JSP para Tabuada do 7</title>
+<title>Teste de Sorte</title>
 </head>
 <body>
 
-	<h3>Pagina de Teste em JSP</h3>
+	<h3>Pagina JSP para Saber sua Sorte</h3>
 
-	<h2>Código Tabuada do 7</h2>
 	<%
-		out.println("Este código mostra a tabuada do número 7");
-		for (int i = 1; i <= 10; i++) {
+		double num = Math.random();
+		if (num > 0.95) {
 	%>
-	<h4>
-		7 X
-		<%=i%>
-		=
-		<%=(i * 7)%>
-	</h4>
+
+	<h2>Você terá um dia de sorte</h2>
+	<p>
+		(<%=num%>)
+	</p>
+	<%
+		} else {
+	%>
+	<h2>Bem, a vida segue ...</h2>
+	<p>
+		(<%=num%>)
+	</p>
 	<%
 		}
 	%>
-	<h2>Fim da Tabuada</h2>
+	<a href="<%=request.getRequestURI()%>"><h3>Tente novamente</h3></a>
 
 </body>
 </html>

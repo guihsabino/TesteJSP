@@ -1,31 +1,28 @@
 <?xml version="1.0" encoding="UTF-8" ?>
+<%@page import="java.text.SimpleDateFormat"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+
+<%@page import="java.util.Date, java.text.SimpleDateFormat"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Teste JSP para Tabuada do 7</title>
+<title>Pagina de Teste JSP</title>
 </head>
 <body>
+	<h1>Teste de JSP</h1>
+	<p>Hello World</p>
 
-	<h3>Pagina de Teste em JSP</h3>
+	<%
+		Date a = new Date();
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+	%>
 
-	<h2>Código Tabuada do 7</h2>
-	<%
-		out.println("Este código mostra a tabuada do número 7");
-		for (int i = 1; i <= 10; i++) {
-	%>
-	<h4>
-		7 X
-		<%=i%>
-		=
-		<%=(i * 7)%>
-	</h4>
-	<%
-		}
-	%>
-	<h2>Fim da Tabuada</h2>
+	<h3>
+		Data e hora atual:
+		<%=sdf.format(a)%></h3>
+
 
 </body>
 </html>
